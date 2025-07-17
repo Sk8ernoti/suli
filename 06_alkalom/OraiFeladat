@@ -1,0 +1,80 @@
+"""I. Feladat: Szorzat
+Egy függvényt tesztelünk, amely két szám szorzatát adja vissza eredményül.
+Írj egy függvényt "szorzat" néven, amely két számot vár paraméterül és visszaadja a szorzatukat.
+Ha nem számot adnak meg, fusson hibára!"""
+from sre_compile import isstring
+
+
+def Szorzat(szam_1, szam_2):
+    tmp_str1 = str(szam_1)
+    tmp_str2 = str(szam_2)
+
+    if(tmp_str1.isnumeric() and tmp_str2.isnumeric()):
+        return (szam_1 * szam_2)
+    else:
+        return "érvénytelen eredmény"
+
+    return 0
+
+
+"""II. Feladat: Kisebb duplája
+Egy függvényt tesztelünk, amely két szám közül adja vissza a kisebb dupláját.
+Írj egy függvényt "kisebb_dupla" néven, amely két számot kap paraméterül és visszaadja a kisebb szám dupláját.
+Output"""
+
+def kissebb_dupla(szam_1, szam_2):
+    if szam_1 <= szam_2:
+        eredmeny = (szam_1*2)
+    else:
+        eredmeny = (szam_2*2)
+
+    return eredmeny
+
+"""III. Feladat: Páros vagy páratlan?
+Egy függvényt tesztelünk, amely egy egész szám alapján kiírja, hogy az páratlan-e.
+Írj egy függvényt "paros_paratlan" néven, amely a bejövő paraméter alapján kiírja, hogy az páros-e vagy páratlan. Pl. így: Ez a szám ... páros!
+"""
+
+def paros_vagy_paratlan(bemenet):
+    if bemenet > 0:
+        if bemenet % 2 == 0:
+            return "páros"
+        else:
+            return "páratlan"
+    return "érvénytelen"
+
+
+"""IV. Feladat: Nagyobb triplázva
+Egy függvényt tesztelünk, amely két szám közül adja vissza a nagyobb háromszorosát.
+Írj függvényt "nagyobbTripla" néven, amely visszaadja a két szám közül a nagyobb háromszorosát.
+Output részlet:"""
+
+def nagyobbTripla(szam_1, szam_2):
+    if szam_1 < szam_2:
+        eredmeny = (szam_2*3)
+    else:
+        eredmeny = (szam_1*3)
+
+    return eredmeny
+
+"""+ Feladat: Szóközök nélkül
+Egy függvényt tesztelünk, amely bekér egy sztringet szóközökkel (min 1) és a bekért sztringből kiveszi a szóközöket."""
+def szokozok_nelkul(bemeno_szoveg):
+    kimenet = str(bemeno_szoveg)
+
+    kimenet.replace(' ' ,'')
+
+    return kimenet
+
+
+
+print ("az eredmény: ", Szorzat(1,2))
+
+print("a kissebbik duplája:", kissebb_dupla(3,5))
+
+bemeno_szam = 5
+print("A bemenő szám: ", bemeno_szam, ":", paros_vagy_paratlan(bemeno_szam))
+
+print ("a nagyobbik szám triplája: ", nagyobbTripla(8,3))
+
+#print (szokozok_nelkul("trololo ez egy teli szokozos szoveg"))
